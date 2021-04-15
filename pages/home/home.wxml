@@ -1,3 +1,5 @@
 <!--page/home.wxml-->
 <text class="title">page/home.wxml</text>
 <button >按钮</button>
+
+<view>second tag</view>
