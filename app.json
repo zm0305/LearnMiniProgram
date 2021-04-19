@@ -2,5 +2,29 @@
   "pages": [
     "pages/home/home",
     "pages/about/about"
-  ]
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#00B26A",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "争鸣书店",
+    "backgroundColor": "#cccccc",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home_active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "assets/tabbar/about.png",
+        "selectedIconPath": "assets/tabbar/about_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
