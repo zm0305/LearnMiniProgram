@@ -1,0 +1,27 @@
+/* pages/scroll/scroll.wxss */
+.container1 {
+  background: lightgreen;
+  white-space: nowrap;
+}
+
+/* item1为块元素时，会出现外边距坍塌的效果
+  为行内块元素时，则不会 */
+.item1 {
+  height: 100px;
+  width: 100px;
+  background: lightyellow;
+  margin: 10px;
+  display: inline-block;
+}
+
+.container2 {
+  margin-top: 10px;
+  background: orange;
+  height: 300px;
+}
+
+.item2 {
+  background: lightblue;
+  height: 100px;
+  margin: 10px;
+}

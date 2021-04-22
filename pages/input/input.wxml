@@ -1,0 +1,14 @@
+<!--pages/input/input.wxml-->
+<!-- type：决定键盘的类型，默认为text -->
+<input value="haha" type="idcard" />
+<input type="number" />
+<input type="digit" />
+<!-- 密码类型 -->
+<input type="text" password />
+<!-- confirm-type：设置键盘右下角按钮的文字，仅在type='text'时生效 -->
+<input type="text" confirm-type="go" />
+<!-- bindinput：键盘输入时触发
+    bindfocus：输入框聚焦时触发
+    bindblur：输入框失去焦点时触发
+    bindconfirm：点击键盘右下角完成按钮时触发 -->
+<input type="text" bindinput="bindinput" bindfocus="bindfocus" bindblur=" bindblur" bindconfirm="bindconfirm" />

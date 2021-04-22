@@ -1,0 +1,15 @@
+<!--pages/view/view.wxml-->
+<!-- 1、view的基本使用 -->
+<view class="box">
+  <text>hahahha</text>
+  <button size="mini">button</button>
+</view>
+<view hover-class="tap">xixixi</view>
+<!-- hover-stay-time，手指松开后点击态保留时间，默认为400ms -->
+<view hover-class="tap" hover-stay-time="0">xixixi</view>
+<!-- hover-stop-propagation:阻止父节点出现点击状态 -->
+<view class="box2" hover-class="tap2">
+  <view hover-class="tap1" hover-stop-propagation="{{false}}">
+    asd
+  </view>
+</view>

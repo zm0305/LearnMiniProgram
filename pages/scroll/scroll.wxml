@@ -1,0 +1,18 @@
+<!--pages/scroll/scroll.wxml-->
+<!-- 1、水平滚动，scroll-x -->
+<scroll-view class="container1" scroll-x>
+  <view wx:for="{{10}}" wx:key="id" class="item1">{{item}}</view>
+</scroll-view>
+<!-- 2、垂直滚动，scroll-y -->
+<scroll-view class="container2" scroll-y>
+  <view wx:for="{{10}}" wx:key="id" class="item2">{{item}}</view>
+</scroll-view>
+
+<!-- 3、其他补充，事件绑定
+  bindscroll:滑动时触发
+  bindscrolltolower：滑到底部/右边触发
+  lower-threshold：距离底部/右边还有多远时触发bindscrolltolower，默认是50 -->
+<scroll-view class="container2" scroll-y bindscroll="handleScroll" bindscrolltolower="handleScrollToLower"
+  lower-threshold="10">
+  <view wx:for="{{10}}" wx:key="id" class="item2">{{item}}</view>
+</scroll-view>
