@@ -1,3 +1,5 @@
 <!--page/home.wxml-->
+<!-- include标签一般用于导入整个文件，可以用于嵌套导入 -->
+<include src="/wxml/header.wxml"></include>
 <text class="title">page/home.wxml</text>
 <button >按钮</button>

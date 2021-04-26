@@ -1,0 +1,70 @@
+<!--pages/wxml/wxml.wxml-->
+<view>{{msg}}</view>
+<view>{{msg + " " + msg}}</view>
+<view>{{age >= 18? '1': 0}}</view>
+<view>{{time}}</view>
+<button size="mini" bindtap="handleChangeColor">change</button>
+<view class="box {{isActive? 'active':''}}">aaaaaaaa</view>
+
+<view>------------1、wx-if---------------</view>
+<button size="mini" bindtap="handleSwitch">change</button>
+<view wx-if="{{isShow}}">lalal</view>
+
+<view wx:if="{{score>=90}}">good</view>
+<view wx:elif="{{score>=80}}">good2</view>
+<view wx:elif="{{score>=60}}">just soso</view>
+<view wx:else>bad</view>
+
+<view>---------------2、hidden---------------</view>
+<!-- 通过hidden隐藏时，组件仍然存在
+     通过wx:if隐藏时，该组件都不存在 -->
+<view hidden="{{false}}">asdasd</view>
+
+<view>---------------3、v-for--------------</view>
+<view wx:for="{{['a','b','c']}}" wx:key="id">{{item}}</view>
+<view wx:for="qwer" wx:key="id">{{item}}-{{index}}</view>
+
+<view>---------------4、block标签--------------</view>
+<!-- 在使用wx:if或wx:for时，可能需要包裹一组标签，就可以使用block来包裹，
+  该标签不会被渲染出来，更节省性能 -->
+<block wx:if="{{isShow}}">
+  <view>sadas</view>
+  <button>hh</button>
+</block>
+
+<view>---------------5、item、index命名--------------</view>
+<view wx:for="{{arr}}" wx:for-item="i" wx:for-index="id" wx:key="id">{{i}}-{{id}}</view>
+<!-- 命名中不能有-，可以使用_或驼峰 -->
+<block wx:for="{{data}}" wx:for-item="innervalue" wx:key="id">
+  <view wx:for="{{innervalue}}" wx:key="id">{{item}}</view>
+</block>
+
+<view>---------------6、wx:key--------------</view>
+<view>使用wx:for时，如果没有使用wx:key会报一个警告，可以使用wx:key提高性能</view>
+<view>key可以给每个节点做一个唯一标识，diff算法可以正确识别此节点，找到正确的位置插入节点</view>
+<view>因此，key的作用是为了高效的更新虚拟dom</view>
+
+
+<view>---------------7、template--------------</view>
+<!-- 没有自定义组件时，用来做代码的复用
+    - 使用name属性，作为模板的名字
+    - 模板包裹的内容，在没有使用时，是不会进行渲染的
+    - 使用is属性，表示使用模板
+    - 使用{{}}可以自定义模板中的文字内容，使用data进行传入内容
+    - 可以将template抽到一个单独的组件中，再使用import进行导入
+    - 使用import导入時，不能使用嵌套导入，即导入的模板中还导入了别的模板 -->
+<!-- 
+    关于wxml的导入方式：
+    1、import导入
+      - 主要是导入template
+      - 不能进行嵌套导入
+    2、include导入
+      - 将公共的wxml中的组件抽取到一个文件中
+      - 不能导入template/wxss，可以进行嵌套导入
+ -->
+<!-- <template name="contentItem">
+  <button>{{btnText}}</button>
+  <view>{{btnValue}}</view>
+</template> -->
+<import src="/wxml/template.wxml"></import>
+<template is="contentItem" data="{{btnText:'按钮',btnValue:'asdas'}}" />
