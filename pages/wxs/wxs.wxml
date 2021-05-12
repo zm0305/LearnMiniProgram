@@ -1,0 +1,23 @@
+<!--pages/wxs/wxs.wxml-->
+<!-- wxs的定义方式 -->
+<!-- 1、在wxml中定义 -->
+<!-- <wxs module="info">
+  //js代码
+  var msg = "hello world";
+  var sum = function (a, b) {
+    return a + b;
+  }
+  //commonjs模块化的导出
+  module.exports = {
+    msg: msg,
+    sum: sum
+  }
+</wxs> -->
+<!-- 2、定义在单独的wxs文件中，再使用wxs标签进行导入，不能使用绝对路径 -->
+<wxs src="../../wxs/info.wxs" module="info"></wxs>
+<view>{{info.msg}}</view>
+<view>{{info.sum(1,5)}}</view>
+
+<!-- 3、实际应用，保留两位小数 -->
+<view>{{info.format(price)}}</view>
+<view>{{info.fomatDate(date,'yyyy-MM-dd hh:mm:ss')}}</view>

@@ -1,0 +1,20 @@
+//js代码
+var msg = "hello world";
+var sum = function (a, b) {
+  return a + b;
+}
+var format = function (num, unit = 2) {
+  var f_num = parseFloat(num);
+  return f_num.toFixed(unit);
+}
+
+var fomatDate = function (date, format) {
+
+}
+//commonjs模块化的导出
+module.exports = {
+  msg: msg,
+  sum: sum,
+  format: format,
+  fomatDate: fomatDate
+}
