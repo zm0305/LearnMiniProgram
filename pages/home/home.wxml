@@ -1,3 +1,34 @@
 <!--page/home.wxml-->
-<text class="title">page/home.wxml</text>
-<button >按钮</button>
+<button bindtap="handleBtnClick" size="mini">按钮</button>
+<button bind:tap="handleBtnClick" size="mini">按钮</button>
+<button catch:tap="handleBtnClick" size="mini">按钮</button>
+
+<!-- <view id="box" class="box" bind:touchstart="handleTouchStart" bind:touchmove="handleTouchmove"
+  bind:touchend="handleTouchEnd" bind:tap="handleTap" bind:longpress="handleLongPress"></view> -->
+
+<button id="btn" size="mini" bind:tap="handleClickEvent" bindtouchend="handleTouchEndEvent">button</button>
+
+<view class="outer" id="outer" bindtap="handleOuter">
+  <view class="inner" bindtap="handleInner" id="inner"></view>
+</view>
+<!-- 事件的传递参数 -->
+
+<view class="container">
+  <block wx:for="{{titles}}" wx:key="{{index}}">
+    <view class="item" bindtap="handleItemClick" data-index="{{index}}" data-item="{{item}}">{{item}}</view>
+  </block>
+</view>
+
+<!-- 事件冒泡和事件捕获 -->
+<!-- <view class="view1" capture-bind:tap="handleCaptureView1" bindtap="handleBindView1">
+  <view class="view2" capture-bind:tap="handleCaptureView2" bindtap="handleBindView2">
+    <view class="view3" capture-bind:tap="handleCaptureView3" bindtap="handleBindView3"></view>
+  </view>
+</view> -->
+<!-- bind，会一层层传递
+     catch，会阻止事件的进一步传递 -->
+<view class="view1" capture-bind:tap="handleCaptureView1" bindtap="handleBindView1">
+  <view class="view2" capture-bind:tap="handleCaptureView2" catchtap="handleBindView2">
+    <view class="view3" capture-bind:tap="handleCaptureView3" bindtap="handleBindView3"></view>
+  </view>
+</view>
