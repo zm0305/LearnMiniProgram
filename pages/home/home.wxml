@@ -1,3 +1,14 @@
 <!--page/home.wxml-->
 <text class="title">page/home.wxml</text>
-<button >按钮</button>
+<button>按钮</button>
+
+<!-- 1、Toast -->
+<button size="mini" bindtap="handleShowToast">showToast</button>
+<!-- 2、Model -->
+<button size="mini" bindtap="handleShowModel">showModel</button>
+<!-- 3、Loading -->
+<button size="mini" bindtap="handleShowLoading">ShowLoading</button>
+<!-- 4、actionSheet，下拉选框 -->
+<button size="mini" bindtap="handleShowActionSheet">ShowActionSheet</button>
+<!-- 5、分享按钮 -->
+<button size="mini" open-type="share">分享</button>
