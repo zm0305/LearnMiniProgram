@@ -1,0 +1,13 @@
+<!--components/my-mulSelect/my-mulSelect.wxml-->
+<view>--------------my-mulSelect--------------------</view>
+<view>my头部</view>
+<view class="slot1">
+  <slot name="slot1" />
+</view>
+<view class=" slot2">
+  <slot name="slot2" />
+</view>
+<view class="slot3">
+  <slot name="slot3" />
+</view>
+<view>my尾部</view>
